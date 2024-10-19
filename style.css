@@ -1,0 +1,135 @@
+body {
+    background: url('./573e07f6d6f354525743cb33824041d3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: rgb(5, 250, 156);
+}
+
+body.logged-in {
+    background: url('./7f557d92121c1d21d22dc2ac23512152.jpg') no-repeat center center fixed; /* Đường dẫn đến ảnh background mới */
+    background-size: cover;
+}
+
+#login-screen {
+    margin-top: 20%;
+}
+
+#password-container {
+    margin-top: 20px; /* Thêm khoảng cách cho ô nhập mật khẩu */
+}
+
+#main-screen {
+    animation: fadeIn 3s;
+}
+
+#letter-image {
+    margin-top: 50px; /* Tăng khoảng cách trên */
+    width: 600px; /* Kích thước bức thư */
+    display: block; /* Đảm bảo bức thư hiển thị như một block */
+    margin-left: auto; /* Căn giữa bên trái */
+    margin-right: auto; /* Căn giữa bên phải */
+    position: relative; /* Để căn vị trí của flap */
+}
+
+.envelope {
+    width: 600px; /* Kích thước bức thư */
+    height: 400px; /* Kích thước bức thư */
+    background: #f5e6c5;
+    border: 1px solid #f5e6c5;
+    border-radius: 5px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.envelope-flap {
+    width: 0;
+    height: 0;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-top: 230px solid #dfb87f;
+    position: absolute;
+    top: 0px; /* Vị trí ban đầu của flap */
+    left: 0;
+    transition: transform 0.3s; /* Hiệu ứng chuyển động */
+}
+
+.envelope-body {
+    height: 90%; /* Chiều cao thân thư */
+    text-align: center; /* Căn giữa chữ trong bức thư */
+    display: flex; /* Sử dụng flexbox để căn giữa chữ */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    font-size: 20px; /* Kích thước chữ bên trong bức thư */
+    position: relative; /* Để có thể đặt nút mở thư ở vị trí đúng */
+}
+
+#open-button {
+    position: absolute; /* Đặt nút ở vị trí tuyệt đối trong thân thư */
+    top: 0;
+    left: 0;
+    width: 100%; /* Chiều rộng bằng 100% của bức thư */
+    height: 100%; /* Chiều cao bằng 100% của bức thư */
+    background: rgba(255, 255, 255, 0); /* Nền trong suốt để không làm mất màu nền */
+    border: none; /* Không có viền */
+    cursor: pointer; /* Hiển thị con trỏ tay khi di chuột */
+}
+
+.envelope.open .envelope-flap {
+    transform: translateY(-230px) rotate(180deg); /* Di chuyển nắp lên trên và xoay 180 độ */
+}
+
+#letter {
+    margin-top: 20px;
+    font-size: 20px;
+    color: yellow;
+    display: none; /* Ẩn nội dung thư */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Hiệu ứng chữ chạy cho từng chữ */
+.letter {
+    display: inline-block; /* Để từng chữ có thể nhảy lên xuống */
+}
+
+/* Hiệu ứng nhảy lên xuống */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#welcome-message {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    font-size: 24px;
+}
+
+#letter-paper {
+    display: none; /* Ẩn tờ giấy khi chưa mở thư */
+    position: relative;
+    width: 500px; /* Độ rộng tờ giấy */
+    margin: 20px auto; /* Căn giữa */
+    background: url("./4d93a8272aabb096cf0723b4922f516a.jpg") no-repeat center center; /* Hình nền tờ giấy */
+    background-size: cover;
+    padding: 20px; /* Khoảng cách nội dung */
+    border-radius: 5px; /* Bo góc */
+    color: black; /* Màu chữ */
+    font-size: 20px; /* Kích thước chữ */
+}
+
+.sender, .recipient {
+    font-weight: bold; /* Chữ in đậm cho người gửi và người nhận */
+    font-size: 24px; /* Kích thước chữ */
+}
+
+#dynamic-content {
+    font-size: 20px; /* Kích thước chữ cho nội dung chạy */
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+}
+

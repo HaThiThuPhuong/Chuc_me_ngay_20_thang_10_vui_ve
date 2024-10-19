@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mẹ ngày 20 tháng 10 vui vẻ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Trang đăng nhập -->
+    <div id="login-screen">
+        <h2 id="login-message">
+            <span class="letter">N</span>
+            <span class="letter">h</span>
+            <span class="letter">ậ</span>
+            <span class="letter">p</span>
+            <span class="letter"> </span>
+            <span class="letter">m</span>
+            <span class="letter">ậ</span>
+            <span class="letter">t</span>
+            <span class="letter"> </span>
+            <span class="letter">k</span>
+            <span class="letter">h</span>
+            <span class="letter">ẩ</span>
+            <span class="letter">u</span>
+            <span class="letter"> </span>
+            <span class="letter">đ</span>
+            <span class="letter">ể</span>
+            <span class="letter"> </span>
+            <span class="letter">t</span>
+            <span class="letter">r</span>
+            <span class="letter">u</span>
+            <span class="letter">y</span>
+            <span class="letter"> </span>
+            <span class="letter">c</span>
+            <span class="letter">ậ</span>
+            <span class="letter">p</span>
+        </h2>
+        <div id="password-container">
+            <input type="password" id="password" placeholder="Mật khẩu">
+            <button onclick="checkPassword()">Đăng nhập</button>
+        </div>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+
+    <!-- Trang chúc mừng -->
+    <div id="main-screen" style="display: none;">
+        <h1 id="welcome-message"></h1>
+        <p>Bạn nhận được một bức thư: <button onclick="showLetter()">Coi thư</button></p>
+        <div id="letter-image" class="envelope" style="display: none;">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body">
+                <button id="open-button" onclick="openLetter()" style="display: none;"> </button>
+            </div>
+        </div>
+        <audio id="background-music" loop>
+            <source src="Thoại 006.m4a" type="audio/mp4">
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Tờ giấy với nội dung -->
+    <div id="letter-paper" style="display: none;">
+        <div class="paper">
+            <p class="sender">Người gửi: Con gái</p>
+            <p id="dynamic-content">
+            </p>
+            <p class="recipient">Người nhận: Mẹ</p>
+        </div>
+    </div>
+</body>
+</html>
